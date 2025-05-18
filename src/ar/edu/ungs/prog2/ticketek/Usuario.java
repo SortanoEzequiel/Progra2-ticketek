@@ -6,7 +6,7 @@ import java.util.List;
 public class Usuario {
 
 	private String email,nombre,apellido,contrasenia;
-	private List<Entrada> entradas; 
+	private List<IEntrada> entradas; 
 	public Usuario(String nombre, String apellido, String email, String contrasenia) {
 		this.email=email;
 		this.nombre=nombre;
@@ -14,7 +14,7 @@ public class Usuario {
 		this.contrasenia=contrasenia;
 	}
 	
-	 public Usuario() {
+	public Usuario() {
 	        this.entradas = new ArrayList<>();
 	    }
 
@@ -29,19 +29,34 @@ public class Usuario {
 		 
 		
 	}
-	 public List<Entrada> getEntradas() {
+	 public List<IEntrada> getEntradas() {
 	        return entradas;
+	    }
+	 
+	 public String getContrasenia() {
+	        return contrasenia;
+	    }
+	 public String getEmail() {
+	        return email;
 	    }
 	 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(" Usuario: ").append(nombre).append(" | Apellido: ").append(apellido).append(" | Email: ").append(email).append(" | contraseña: ").append(contrasenia);
+		sb.append(" Nombre de Usuario: ").append(nombre).append(" | Apellido: ").append(apellido).append(" | Email: ").append(email).append(" | contraseña: ").append(contrasenia);
 		
 		sb.append(this.entradas);
 		
 		return   sb.toString();
 		}
+
+	public boolean autenticarUsuario(String email, String contrasenia) {
+		// TODO Apéndice de método generado automáticamente
+		if(this.email.equals(email) && this.contrasenia.equals(contrasenia)) {
+			return true;
+		}
+		return false;
+	}
 
 
 

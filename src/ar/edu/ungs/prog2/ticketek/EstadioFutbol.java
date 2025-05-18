@@ -6,18 +6,19 @@ public class EstadioFutbol extends Sede {
 	
 	public EstadioFutbol(String nombre, String direccion, Integer capacidadMaxima) {
 		super(nombre, direccion, capacidadMaxima);
-		
 	}
 
 	@Override
-	public double calcularPrecio() {
+	public double precio() {
 		return precioBase;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(" Estadio de Futbol: ").append(nombre).append(" | Direccion: ").append(direccion).append(" | Capacidad: ").append(capacidadMaxima);
+		sb.append(" Estadio de Futbol: ").append(nombre).append(" | Direccion: ");
+		sb.append(direccion).append(" | Capacidad: ").append(capacidadMaxima);
+		sb.append(" | Sector: Campo");
 		return sb.toString();
 	}
 

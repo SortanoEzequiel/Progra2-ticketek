@@ -11,16 +11,16 @@ public abstract class Sede {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidadMaxima = capacidadMaxima;
-//		this.precioBase = precioBase;
+		this.precioBase = 90000.0;
 		
 	}
-
+    
 	
 	
 	
-	public double calcularPrecio() {
+	public double precio() {
 		// TODO Auto-generated method stub
-		return 0;
+		return precioBase;
 	}
 	
 	@Override
